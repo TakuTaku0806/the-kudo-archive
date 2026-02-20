@@ -1,0 +1,40 @@
+<div class="container mx-auto px-4 py-8">
+	<h1 class="text-3xl font-bold mb-6">Selected the anime you're currently watching.</h1>
+
+	<div class="bg-white rounded-lg shadow overflow-hidden">
+		<table class="min-w-full divide-y divide-gray-200">
+			<thead class="bg-gray-50">
+				<tr>
+					<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
+					<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Progress</th>
+					<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Currently in sidebar</th>
+					<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Action</th>
+				</tr>
+			</thead>
+			<tbody class="bg-white divide-y divide-gray-200">
+				<% @anime_entries.each do |anime| %>
+					<tr>
+						<td class="px-6 py-4"><%= anime.title %></td>
+						<td class="px-6 py-4"><%= anime.progress %> / <%= anime.episodes || '?' %>eps.</td>
+						<td class="px-6 py-4">
+							<% if anime.featured_in_sidebar? %>
+								<span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">✅️Yes</span>
+							<% else %>
+								<span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">❌️No</span>
+							<% end %>
+						</td>
+						<td class="px-6 py-4">
+							<% unless anime.featured_in_sidebar? %>
+								<%= button_to "Set as currently watching", set_featured_admin_anime_entry_path(anime), data: { turbo_method: :patch }, class: "text-indigo-600 hover:underline" %>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="mt-6">
+		<%= link_to "Return to dashboard", admin_dashboard_path, class: "text-indigo-600 hover:underline" %>
+	</div>
+</div>		

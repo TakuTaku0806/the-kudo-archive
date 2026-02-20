@@ -1,0 +1,45 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <h2 class="text-xl font-semibold mb-2">Posts</h2>
+    <p class="text-4xl font-bold text-indigo-600"><%= @post_count %></p>
+    <%= link_to "Manage Posts", posts_path, class: "text-indigo-600 hover:underline mt-2 inline-block" %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-2">Comments</h2>
+    <p class="text-4xl font-bold text-indigo-600"><%= @comments_count %></p>
+    <%= link_to "View comments", "#", class: "text-indigo-600 hover:underline mt-2 inline-block" %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-2">Anime Entries</h2>
+    <p class="text-4xl font-bold text-indigo-600"><%= @anime_entries_count %></p>
+    <%= link_to "Manage Anime", anime_path, class: "text-indigo-600 hover:underline mt-2 inline-block" %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-2">Manga Entries</h2>
+    <p class="text-4xl font-bold text-indigo-600"><%= @manga_entries_count %></p>
+    <%= link_to "Manage Manga", manga_path, class: "text-indigo-600 hover:underline mt-2 inline-block" %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-2">Newsletter Subscribers</h2>
+    <p class="text-4xl font-bold text-indigo-600"><%= @subscribers_count %></p>
+</div>
+
+  <div class="mt-8 bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-semibold mb-4">Quick Actions</h2>
+    <div class="flex flex-wrap gap-4">
+      <%= link_to "New Post", new_post_path, class: "bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700" %>
+      <%= link_to "Manage Posts", posts_path, class: "bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300" %>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-2">Currently Watching</h2>
+      <p class="text-sm text-gray-600">Select the anime you are currently watching</p>
+      <%= link_to "Manage", admin_anime_entries_path, class: "text-indigo-600 hover:underline" %>
+  </div>
+</div>
+

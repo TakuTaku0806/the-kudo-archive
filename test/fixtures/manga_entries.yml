@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anilist_id: 1
+  title: MyString
+  cover_image: MyString
+  format: MyString
+  chapters: 1
+  volumes: 1
+  mean_score: 1.5
+  media_status: MyString
+  list_status: MyString
+  progress: 1
+  score: 1
+  visible: false
+  user: one
+
+two:
+  anilist_id: 1
+  title: MyString
+  cover_image: MyString
+  format: MyString
+  chapters: 1
+  volumes: 1
+  mean_score: 1.5
+  media_status: MyString
+  list_status: MyString
+  progress: 1
+  score: 1
+  visible: false
+  user: two
