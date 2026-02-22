@@ -23,4 +23,5 @@ end
   get "manga", to: "manga#index", as: :manga
   get "about", to: "pages#about"
   get "up" => "rails/health#show", as: :rails_health_check
+  get '/sitemap.xml.gz', to: redirect('/sitemaps/sitemap.xml.gz')
 end
