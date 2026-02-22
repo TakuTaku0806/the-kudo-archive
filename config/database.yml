@@ -26,7 +26,8 @@ test:
 production:
   primary: &primary_production
     adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
+    encoding: unicode
+    url: <%= ENV.fetch("DATABASE_URL", "") %>
   
   cable:
     <<: *primary_production
@@ -36,6 +37,6 @@ production:
     <<: *primary_production
     migrations_paths: db/queue_migrate
 
-    cache:
+  cache:
     <<: *primary_production
     migrations_paths: db/cache_migrate
