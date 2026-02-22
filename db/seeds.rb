@@ -1,7 +1,7 @@
 user = User.find_by(email: 'kyaroru@yandex.com')
 if user
-  user.update_columns(admin: true) # update_columns skips validations
-  puts "Successfully made #{user.email} an admin"
+  user.destroy
+  puts "SUCCESS: User #{user.email} has been deleted."
 else
-  puts "User not found!"
+  puts "NOTICE: User not found. They might already be gone."
 end
