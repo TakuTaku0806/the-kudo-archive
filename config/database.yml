@@ -27,6 +27,11 @@ production:
   primary: &primary_production
     adapter: postgresql
     url: <%= ENV['DATABASE_URL'] %>
+  
   cable:
     <<: *primary_production
     migrations_paths: db/cable_migrate
+
+  queue:
+    <<: *primary_production
+    migrations_paths: db/queue_migrate
